@@ -5,6 +5,7 @@ const jwt = require('jsonwebtoken');
 const { getAll, getById, insert, update, remove } = require('./db');
 
 const app = express();
+app.use(require("express").static(require("path").join(__dirname, "public")));
 const PORT = process.env.PORT || 3000;
 const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key';
 
